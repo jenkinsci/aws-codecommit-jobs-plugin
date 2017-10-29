@@ -1,0 +1,13 @@
+{
+  "repositoryMetadata": {
+    "accountId": "1",
+    "repositoryId": "1-1-1-1-1",
+    "repositoryName": "repository-name-1",
+    "defaultBranch": "master",
+    "lastModifiedDate": 1.103,
+    "creationDate": 1.099,
+    "cloneUrlHttp": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/repository-name-1",
+    "cloneUrlSsh": "ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/repository-name-1",
+    "Arn": "arn:aws:codecommit:us-east-1:1:repository-name-1"
+  }
+}

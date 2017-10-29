@@ -1,0 +1,6 @@
+aws-credentials:1.23
+config-file-provider:2.16.4
+pipeline-maven:3.0.0
+workflow-aggregator:2.5
+pipeline-utility-steps:1.5.1
+git:3.6.0
