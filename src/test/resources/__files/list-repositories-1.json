@@ -1,0 +1,13 @@
+{
+  "repositories": [
+    {
+      "repositoryId": "1-1-1-1-1",
+      "repositoryName": "repo-1"
+    },
+    {
+      "repositoryId": "1-1-1-1-2",
+      "repositoryName": "repo-1000"
+    }
+  ],
+  "nextToken": "1000-repositories"
+}
