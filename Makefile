@@ -44,6 +44,9 @@ load: ## load the plugin into jenkins
 jenkins-safeRestart: ## restart jenkins
 	curl -X POST $(jenkins_url)/safeRestart
 
+test:
+	docker run -it --rm --name my-maven-project -v "$$PWD":/usr/src/project -w /usr/src/project maven:3.5-jdk-8 mvn clean test
+
 
 
 
