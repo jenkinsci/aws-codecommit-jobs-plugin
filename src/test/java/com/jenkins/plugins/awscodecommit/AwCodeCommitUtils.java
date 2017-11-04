@@ -24,6 +24,9 @@ package com.jenkins.plugins.awscodecommit;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Protocol;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.codecommit.AWSCodeCommit;
 import com.amazonaws.services.codecommit.AWSCodeCommitClient;
@@ -41,6 +44,7 @@ public class AwCodeCommitUtils {
      * the region for AWS API.
      */
     private static final String REGION = "groland";
+    public static final String FAKE = "fake";
 
     /**
      * Generate client for code commit API
@@ -55,7 +59,19 @@ public class AwCodeCommitUtils {
 
         return AWSCodeCommitClient.builder()
                 .withEndpointConfiguration(endpointConfiguration)
-                .withClientConfiguration(config)
+                .withClientConfiguration(config).withCredentials(new AWSCredentialsProvider() {
+
+                    @Override
+                    public AWSCredentials getCredentials() {
+                        return new BasicAWSCredentials(FAKE, FAKE);
+                    }
+
+                    @Override
+                    public void refresh() {
+
+                    }
+
+                })
                 .build();
     }
 }
