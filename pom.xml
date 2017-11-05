@@ -34,7 +34,7 @@
     </parent>
 
     <artifactId>aws-codecommit-jobs</artifactId>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.0</version>
     <packaging>hpi</packaging>
 
     <name>AWS Code Commit Jobs Plugin</name>
@@ -85,7 +85,7 @@
         <connection>scm:git:git://github.com:jenkinsci/aws-codecommit-jobs-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/aws-codecommit-jobs-plugin.git</developerConnection>
 	<url>https://github.com/jenkinsci/aws-codecommit-jobs-plugin</url>
-        <tag>HEAD</tag>
+        <tag>aws-codecommit-jobs-0.2.0</tag>
     </scm>
 
     <dependencyManagement>
