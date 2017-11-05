@@ -4,3 +4,4 @@ pipeline-maven:3.0.0
 workflow-aggregator:2.5
 pipeline-utility-steps:1.5.1
 git:3.6.0
+aws-codecommit-jobs:0.1.0
