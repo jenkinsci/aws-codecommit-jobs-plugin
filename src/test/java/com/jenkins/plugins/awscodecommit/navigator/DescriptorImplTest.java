@@ -47,26 +47,6 @@ public class DescriptorImplTest {
 
 
     @Test
-    public void given__doCheckAwsCredentialsId__when__empty__then_error() throws Exception {
-        final AWSCodeCommitSCMNavigator.DescriptorImpl descriptor = new AWSCodeCommitSCMNavigator.DescriptorImpl();
-        assertThat(descriptor.doCheckAwsCredentialsId("").kind, is(FormValidation.Kind.ERROR));
-    }
-
-
-    @Test
-    public void given__doCheckAwsCredentialsId__when__with__blank__then_error() throws Exception {
-        final AWSCodeCommitSCMNavigator.DescriptorImpl descriptor = new AWSCodeCommitSCMNavigator.DescriptorImpl();
-        assertThat(descriptor.doCheckAwsCredentialsId("    ").kind, is(FormValidation.Kind.ERROR));
-    }
-
-    @Test
-    public void given__doCheckAwsCredentialsId__when__good__then_ok() throws Exception {
-        final AWSCodeCommitSCMNavigator.DescriptorImpl descriptor = new AWSCodeCommitSCMNavigator.DescriptorImpl();
-        assertThat(descriptor.doCheckAwsCredentialsId("id credentials"), is(FormValidation.ok()));
-    }
-
-
-    @Test
     public void given__doCheckPattern__when__good_regex__then_ok() throws Exception {
         final AWSCodeCommitSCMNavigator.DescriptorImpl descriptor = new AWSCodeCommitSCMNavigator.DescriptorImpl();
         assertThat(descriptor.doCheckPattern(".*"), is(FormValidation.ok()));
