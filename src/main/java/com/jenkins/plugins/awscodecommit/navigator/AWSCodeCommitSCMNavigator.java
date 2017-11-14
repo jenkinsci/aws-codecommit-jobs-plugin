@@ -151,7 +151,7 @@ public class AWSCodeCommitSCMNavigator extends SCMNavigator {
         final String region = getRegion();
 
         final PrintStream logger = listener.getLogger();
-        if (region == null || credentialsForAPI == null || credentialsForCodeCommit == null) {
+        if (region == null || credentialsForCodeCommit == null) {
             logger.printf("visitSources - with null value(s): '%s' '%s' '%s' '%s'%n", awsCodeCommitURL, awsCredentialsId, codeCommitCredentialsId, region);
         } else {
             logger.println("visitSources - start to checkout the code");
@@ -385,18 +385,6 @@ public class AWSCodeCommitSCMNavigator extends SCMNavigator {
             return FormValidation.error(Messages.AWSCodeCommitSCMNavigator_AwsCodeCommitURLCheckKo(PATTERN_CODE_COMMIT_URL.pattern()));
         }
 
-        /**
-         * We need credentials to communicate with API
-         *
-         * @param value the credential s identifier
-         * @return OK if we have one, error else.
-         */
-        @Restricted(NoExternalUse.class)
-        @SuppressWarnings("unused") // stapler form binding
-        public FormValidation doCheckAwsCredentialsId(@QueryParameter String value) {
-            return FormValidation.validateRequired(value);
-        }
-
 
         /**
          * Listbox for the credentials for the API.
@@ -418,9 +406,7 @@ public class AWSCodeCommitSCMNavigator extends SCMNavigator {
          */
         @SuppressWarnings("unused") // stapler form binding
         public ListBoxModel doFillCodeCommitCredentialsIdItems(@AncestorInPath SCMSourceOwner context) {
-            final StandardListBoxModel list = createListBoxCredentials(context, StandardUsernameCredentials.class, GitClient.CREDENTIALS_MATCHER);
-            list.includeEmptyValue();
-            return list;
+            return createListBoxCredentials(context, StandardUsernameCredentials.class, GitClient.CREDENTIALS_MATCHER);
         }
 
         /**
@@ -444,6 +430,7 @@ public class AWSCodeCommitSCMNavigator extends SCMNavigator {
                     URIRequirementBuilder.create().build(),
                     credentialsMatcher
             );
+            result.includeEmptyValue();
             return result;
         }
 
