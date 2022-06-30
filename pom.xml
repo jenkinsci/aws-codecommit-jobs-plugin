@@ -58,7 +58,7 @@
         <git.version>3.5.0</git.version>
         <junit.version>4.13.1</junit.version>
         <workflow-step-api.version>2.6</workflow-step-api.version>
-        <jenkins.junit.version>1.3</jenkins.junit.version>
+        <jenkins.junit.version>1.24</jenkins.junit.version>
         <aws-java-sdk-bom.version>1.11.220</aws-java-sdk-bom.version>
         <wiremock.version>2.10.1</wiremock.version>
         <mockito.version>2.11.0</mockito.version>
