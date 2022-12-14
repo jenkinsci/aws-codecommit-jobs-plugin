@@ -54,7 +54,7 @@
 
 
         <scm-api.version>2.2.3</scm-api.version>
-        <aws-credentials.version>1.23</aws-credentials.version>
+        <aws-credentials.version>1.28.1</aws-credentials.version>
         <git.version>3.5.0</git.version>
         <junit.version>4.13.1</junit.version>
         <workflow-step-api.version>2.6</workflow-step-api.version>
