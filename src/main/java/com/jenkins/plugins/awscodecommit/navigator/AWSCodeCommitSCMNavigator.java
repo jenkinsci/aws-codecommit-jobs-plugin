@@ -155,6 +155,12 @@ public class AWSCodeCommitSCMNavigator extends SCMNavigator {
             logger.printf("visitSources - with null value(s): '%s' '%s' '%s' '%s'%n", awsCodeCommitURL, awsCredentialsId, codeCommitCredentialsId, region);
         } else {
             logger.println("visitSources - start to checkout the code");
+            if (traits == null) {
+                logger.println("visitSources - null traits");
+                this.traits = Collections.emptyList();
+            } else {
+                logger.printf("visitSources - traits length %d%n", traits.size());
+            }
 
             final AWSCodeCommit client = AWSCodeCommitClient.builder()
                     .withRegion(region)
